@@ -40,8 +40,7 @@ The Formal Verification (FV) component of the contest is about using the Certora
 - **Certora folder**:
   - Certora folder is made up of 5 folders:
     - `confs`: configuration files for the tool. There is one per contract. More can be added if needed.
-    - `harnesses`: contracts that inherit base contracts to add extra functionality.
-    - `helpers`: additional contracts or mocks needed for verification.
+    - `harnesses`: contracts that inherit base contracts to add extra functionality and other additional contracts or mocks needed for verification.
     - `mutations`: mutants folder which will be used to evaluate specs.
     - `specs`: specification used to verify the smart contracts.
 
