@@ -22,6 +22,7 @@ methods {
     function _._call(address, bytes) external => NONDET;
     function _.notifyUnsubscribe(uint256, PositionManagerHarness.PositionInfo, bytes) external => NONDET;
     function _.notifyUnsubscribe(uint256, PositionManagerHarness.PositionInfo memory, bytes memory) internal => NONDET;
+    function _.notifyUnsubscribe(uint256) external => NONDET;
     // likely unsound, but assumes no callback
     function _.onERC721Received(
         address operator,
