@@ -29,7 +29,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
 
     constructor(IPoolManager _poolManager) BaseActionsRouter(_poolManager) {}
 
-    function _handleAction(uint256 action, bytes calldata params) internal override {
+    function _handleAction(uint256 action, bytes calldata params) internal override virtual /* add virtual AT@Certora */ {
         // swap actions and payment actions in different blocks for gas efficiency
         if (action < Actions.SETTLE) {
             if (action == Actions.SWAP_EXACT_IN) {
@@ -84,7 +84,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
         revert UnsupportedAction(action);
     }
 
-    function _swapExactInputSingle(IV4Router.ExactInputSingleParams calldata params) private {
+    function _swapExactInputSingle(IV4Router.ExactInputSingleParams calldata params) internal /* pirvate to internal AT@Certora */ {
         uint128 amountIn = params.amountIn;
         if (amountIn == ActionConstants.OPEN_DELTA) {
             amountIn =
@@ -96,7 +96,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
         if (amountOut < params.amountOutMinimum) revert V4TooLittleReceived(params.amountOutMinimum, amountOut);
     }
 
-    function _swapExactInput(IV4Router.ExactInputParams calldata params) private {
+    function _swapExactInput(IV4Router.ExactInputParams calldata params) internal /* pirvate to internal AT@Certora */ {
         unchecked {
             // Caching for gas savings
             uint256 pathLength = params.path.length;
@@ -120,7 +120,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
         }
     }
 
-    function _swapExactOutputSingle(IV4Router.ExactOutputSingleParams calldata params) private {
+    function _swapExactOutputSingle(IV4Router.ExactOutputSingleParams calldata params) internal /* pirvate to internal AT@Certora */ {
         uint128 amountOut = params.amountOut;
         if (amountOut == ActionConstants.OPEN_DELTA) {
             amountOut =
@@ -142,7 +142,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
         if (amountIn > params.amountInMaximum) revert V4TooMuchRequested(params.amountInMaximum, amountIn);
     }
 
-    function _swapExactOutput(IV4Router.ExactOutputParams calldata params) private {
+    function _swapExactOutput(IV4Router.ExactOutputParams calldata params) internal /* pirvate to internal AT@Certora */ {
         unchecked {
             // Caching for gas savings
             uint256 pathLength = params.path.length;
@@ -176,7 +176,7 @@ abstract contract V4Router is IV4Router, BaseActionsRouter, DeltaResolver {
         int256 amountSpecified,
         uint160 sqrtPriceLimitX96,
         bytes calldata hookData
-    ) private returns (int128 reciprocalAmount) {
+    ) internal /* pirvate to internal AT@Certora */ returns (int128 reciprocalAmount) {
         unchecked {
             BalanceDelta delta = poolManager.swap(
                 poolKey,
