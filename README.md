@@ -10,7 +10,6 @@ The Formal Verification (FV) component of the contest is about using the Certora
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
 | [PositionManager.sol](https://github.com/Certora/uniswap-v4-periphery-cantina-fv/blob/master/src/PositionManager.sol)                                                                   | 250   |
 | [V4Router.sol](https://github.com/Certora/uniswap-v4-periphery-cantina-fv/blob/master/src/V4Router.sol)                                                                   | 144   |
-| [Quoter.sol](https://github.com/Certora/uniswap-v4-periphery-cantina-fv/blob/master/src/lens/Quoter.sol)                                                                   | 223   |
 
 ## Overview
 - 100,000 USDC of this contest will be allocated for FV.
