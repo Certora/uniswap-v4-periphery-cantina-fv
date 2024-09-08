@@ -75,6 +75,7 @@ The Formal Verification (FV) component of the contest is about using the Certora
   - Source code modifications are prohibited.
     - Evaluations are based on the original code; configurations reliant on code changes will be disregarded.
   - Utilize the latest version of `certoraRun` available at contest start.
+    - Make sure to update to the latest version of `certora-cli` before starting verification by running `pip install certora-cli --upgrade`.
     - Avoid updates during the contest, even if new versions are released.
     - Only update if explicitly told to by Certora team.
   - Submissions with tool errors, compilation errors, or timing-out rules will not be considered.
