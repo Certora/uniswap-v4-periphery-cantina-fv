@@ -19,7 +19,7 @@ methods {
     function PoolGetters.getSyncedReserves() external returns (uint256) envfree;
 }
 
-function getPoolManager() returns address {
+function poolManager() returns address {
     return currentContract;
 }
 

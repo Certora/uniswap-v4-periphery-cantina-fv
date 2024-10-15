@@ -4,6 +4,7 @@ using V4RouterHarness as Harness;
 
 methods {
     // envfree
+    function Harness.poolManager() external returns (address) envfree;
     function Harness.msgSender() external returns (address) envfree;
 
 

@@ -59,7 +59,7 @@ rule increaseLiquidityDecreasesBalances(env e) {
 }
 
 
-rule positionManagerSanctioned(address token, method f, env e, calldataarg args) filtered {
+rule positionManagerDoesntAccrueTokens(address token, method f, env e, calldataarg args) filtered {
     f -> f.selector != sig:settlePair(Conversions.Currency,Conversions.Currency).selector
     && f.selector != sig:settle(Conversions.Currency,uint256,bool).selector
     && f.selector != sig:takePair(Conversions.Currency,Conversions.Currency,address).selector

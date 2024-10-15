@@ -2,10 +2,6 @@
 
 import "Conversions.spec";
 
-methods {
-    function poolManager() external returns (address) envfree;
-}
-
 // The nonZeroCounterArray counts the nonzero entries in currencyDelta.
 // It starts at 0 and increments by one for every nonzero entry in currencyDelta.
 // nonZeroCounterArray[2^320] should be equal to getNonzeroDeltaCount().
