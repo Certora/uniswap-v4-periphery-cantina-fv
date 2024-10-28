@@ -99,7 +99,9 @@ This report summarizes the findings from the Uniswap v4 audit competition, focus
 *Author: 0x00ffDa*
 
 ```solidity
-rule mintSlippageOk(env e, PositionManagerHarness.PoolKey poolKey, uint256 liquidity, uint128 amount0Max, uint128 amount1Max, bytes hookData) {
+rule mintSlippageOk(env e) {
+    PositionManagerHarness.PoolKey poolKey;
+    uint256 liquidity; uint128 amount0Max; uint128 amount1Max; bytes hookData;
     uint256 tokenId = nextTokenId();
     require tokenId < max_uint256;
     
